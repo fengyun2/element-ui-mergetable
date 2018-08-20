@@ -65,6 +65,7 @@ module.exports = {
     'no-unused-vars': 'off',
     semi: 'off',
     'space-infix-ops': 'off',
-    'no-param-reassign': 'off'
+    'no-param-reassign': 'off',
+    indent: 'off'
   }
 };

@@ -596,6 +596,14 @@
     &.el-table--scrollable-y .el-table__body-wrapper {
       overflow-y: auto;
     }
+    .el-table__fixed,
+    .el-table__fixed-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
   }
 
 </style>

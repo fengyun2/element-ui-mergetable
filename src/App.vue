@@ -2,7 +2,7 @@
   <div id="app">
     <paste-select :params="{fieid: 'subject', label: '姓名', required: true}"/>
     <paste-select :params="{fieid: 'jobNumber', label: '工号', required: true}"/>
-    <!-- <multi-table /> -->
+    <multi-table />
 
     <!-- <multi-tree/> -->
 

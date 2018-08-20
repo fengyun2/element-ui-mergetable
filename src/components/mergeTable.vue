@@ -5,32 +5,32 @@
       </el-table-column>
       <el-table-column prop="id" label="ID" width="180">
       </el-table-column>
-      <el-table-column prop="name" label="姓名">
+      <el-table-column prop="name" label="姓名" width="180">
       </el-table-column>
-      <el-table-column label="麦芽糖">
+      <el-table-column label="麦芽糖" align="center">
         <el-table-column prop="amount1" label="数值 1（元）">
         </el-table-column>
       </el-table-column>
-      <el-table-column label="配送信息">
-        <el-table-column prop="amount1" label="数值 1（元）">
+      <el-table-column label="配送信息" align="center" fixed="right">
+        <el-table-column prop="amount1" label="数值 1（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount2" label="数值 2（元）">
+        <el-table-column prop="amount2" label="数值 2（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount3" label="数值 3（元）">
+        <el-table-column prop="amount3" label="数值 3（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount4" label="数值 4（元）">
+        <el-table-column prop="amount4" label="数值 4（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount5" label="数值 5（元）">
+        <el-table-column prop="amount5" label="数值 5（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount6" label="数值 6（元）">
+        <el-table-column prop="amount6" label="数值 6（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount7" label="数值 7（元）">
+        <el-table-column prop="amount7" label="数值 7（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount8" label="数值 8（元）">
+        <el-table-column prop="amount8" label="数值 8（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount9" label="数值 9（元）">
+        <el-table-column prop="amount9" label="数值 9（元）" fixed="right">
         </el-table-column>
-        <el-table-column prop="amount10" label="数值 10（元）">
+        <el-table-column prop="amount10" label="数值 10（元）" fixed="right">
         </el-table-column>
       </el-table-column>
 
@@ -190,7 +190,7 @@ export default {
     handleSelectionChange (rows) {
       console.log('handleSelectionChange - ', rows);
     },
-    handleChange(selection, row) {
+    handleChange (selection, row) {
       console.log('handleChange - ', selection, row);
     },
     // 获取row的key值
