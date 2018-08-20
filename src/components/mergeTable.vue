@@ -1,62 +1,39 @@
 <template>
   <div class="box">
-    <v-table
-      :data="tableData6"
-      :span-method="objectSpanMethod"
-      border style="100%" ref="table">
-      <el-table-column
-        type="selection"
-        width="55">
+    <v-table :data="tableData6" :span-method="objectSpanMethod" border style="100%" ref="table" :row-key="getRowKeys" @selection-change="handleSelectionChange" @select-all="handleSelectAll" @select="handleChange">
+      <el-table-column type="selection" width="55">
       </el-table-column>
-      <el-table-column
-        prop="id"
-        label="ID"
-        width="180">
+      <el-table-column prop="id" label="ID" width="180">
       </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名">
+      <el-table-column prop="name" label="姓名">
       </el-table-column>
-      <el-table-column
-        prop="amount1"
-        label="数值 1（元）">
+      <el-table-column label="麦芽糖">
+        <el-table-column prop="amount1" label="数值 1（元）">
+        </el-table-column>
       </el-table-column>
-      <el-table-column
-        prop="amount2"
-        label="数值 2（元）">
+      <el-table-column label="配送信息">
+        <el-table-column prop="amount1" label="数值 1（元）">
+        </el-table-column>
+        <el-table-column prop="amount2" label="数值 2（元）">
+        </el-table-column>
+        <el-table-column prop="amount3" label="数值 3（元）">
+        </el-table-column>
+        <el-table-column prop="amount4" label="数值 4（元）">
+        </el-table-column>
+        <el-table-column prop="amount5" label="数值 5（元）">
+        </el-table-column>
+        <el-table-column prop="amount6" label="数值 6（元）">
+        </el-table-column>
+        <el-table-column prop="amount7" label="数值 7（元）">
+        </el-table-column>
+        <el-table-column prop="amount8" label="数值 8（元）">
+        </el-table-column>
+        <el-table-column prop="amount9" label="数值 9（元）">
+        </el-table-column>
+        <el-table-column prop="amount10" label="数值 10（元）">
+        </el-table-column>
       </el-table-column>
-      <el-table-column
-        prop="amount3"
-        label="数值 3（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount4"
-        label="数值 4（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount5"
-        label="数值 5（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount6"
-        label="数值 6（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount7"
-        label="数值 7（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount8"
-        label="数值 8（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount9"
-        label="数值 9（元）">
-      </el-table-column>
-            <el-table-column
-        prop="amount10"
-        label="数值 10（元）">
-      </el-table-column>
+
     </v-table>
   </div>
 </template>
@@ -67,7 +44,7 @@ export default {
   components: {
     [VTable.name]: VTable
   },
-  data() {
+  data () {
     return {
       tableData6: [
         {
@@ -90,7 +67,7 @@ export default {
           amount1: '165',
           amount2: '4.43',
           amount3: 12,
-                    amount4: 11,
+          amount4: 11,
           amount5: 12,
           amount6: 14,
           amount7: 15,
@@ -105,7 +82,7 @@ export default {
           amount1: '324',
           amount2: '1.9',
           amount3: 9,
-                    amount4: 11,
+          amount4: 11,
           amount5: 12,
           amount6: 14,
           amount7: 15,
@@ -119,7 +96,7 @@ export default {
           amount1: '621',
           amount2: '2.2',
           amount3: 17,
-                    amount4: 11,
+          amount4: 11,
           amount5: 12,
           amount6: 14,
           amount7: 15,
@@ -133,7 +110,7 @@ export default {
           amount1: '539',
           amount2: '4.1',
           amount3: 15,
-                    amount4: 11,
+          amount4: 11,
           amount5: 12,
           amount6: 14,
           amount7: 15,
@@ -146,11 +123,11 @@ export default {
       spanArr: []
     };
   },
-  created() {
+  created () {
     this.getSpanArr(this.tableData6);
   },
   methods: {
-    getSpanArr(data) {
+    getSpanArr (data) {
       for (var i = 0; i < data.length; i++) {
         if (i === 0) {
           this.spanArr.push(1);
@@ -167,10 +144,10 @@ export default {
         }
       }
     },
-    objectSpanMethod({ row, column, rowIndex, columnIndex }) {
+    objectSpanMethod ({ row, column, rowIndex, columnIndex }) {
       if (columnIndex === 2) {
-        console.log('column: ', column)
-        console.log('columnIndex ', this.spanArr);
+        // console.log('column: ', column)
+        // console.log('columnIndex ', this.spanArr);
         const _row = this.spanArr[rowIndex];
         const _col = _row > 0 ? 1 : 0;
         return {
@@ -206,6 +183,19 @@ export default {
       //     };
       //   }
       // }
+    },
+    handleSelectAll (rows) {
+      console.log('handleSelectAll - ', rows);
+    },
+    handleSelectionChange (rows) {
+      console.log('handleSelectionChange - ', rows);
+    },
+    handleChange(selection, row) {
+      console.log('handleChange - ', selection, row);
+    },
+    // 获取row的key值
+    getRowKeys (row) {
+      return row.id;
     }
   }
 };
